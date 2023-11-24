@@ -19,6 +19,7 @@ const Login = () => {
                         <div className="shadow-2xl ">
                             <form className="card-body">
                                 <div className="form-control">
+                                    <p className="text-2xl font-bold">Login</p>
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>

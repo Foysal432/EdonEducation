@@ -1,6 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrFormPreviousLink } from "react-icons/gr";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 const Login = () => {
+    const navigate =useNavigate()
+    const {login,Googlesingin} = useAuth()
+
+// use email and password
+const handlelogin =(e)=>{
+    e.preventDefault()
+    const email =e.target.email.value;
+     const password =e.target.password.value;
+     console.log(email,password)
+     login(email,password)
+     .then(result=>{
+      console.log(result.user);
+      toast.success('login success')
+      navigate('/')
+     })
+     .catch(error=>{
+      toast.error(error.message)
+     })
+  }
+
+
+
+    // sining with google
+  const  handleGooglelogin = ()=>{
+    Googlesingin ()
+    .then(result=>{
+        console.log(result.user);
+        toast.success('Google login success')
+        navigate('/')
+    })
+    .catch (error =>{
+      toast.error(error.message)
+    })
+    }
+
     return (
         <div>
             <div className="text-center bg-[#F5F1EE] py-5">
@@ -17,19 +54,19 @@ const Login = () => {
                 <div className=" w-4/5 mx-auto">
                     <div className="">
                         <div className="shadow-2xl ">
-                            <form className="card-body">
+                            <form  onSubmit={handlelogin} className="card-body">
                                 <div className="form-control">
                                     <p className="text-2xl font-bold">Login</p>
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" placeholder="email" className="input input-bordered" required />
+                                    <input name="email" type="email" placeholder="email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" placeholder="password" className="input input-bordered" required />
+                                    <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
@@ -41,7 +78,7 @@ const Login = () => {
                         <div className="text-center py-5 pt-0">
                         <p className="text-center my-4">Or Log in with</p>
                             <div>
-                                <button className="btn w-full bg-green-400">Google</button>
+                                <button onClick={handleGooglelogin} className="btn w-full bg-green-400">Google</button>
                             </div>
                         </div>
                         <p className="p-4">Don't have an account yet? <Link className="text-green-500" to={'/register'}>Register</Link> for free</p>

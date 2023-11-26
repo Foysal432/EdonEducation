@@ -11,6 +11,8 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Provider from './Config/Provider';
 import { Toaster } from 'react-hot-toast';
+import Dashbord from './Layout/Dashbord';
+import Cart from './Pages/Dashboard/Cart/Cart';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
 {
   path:'register',
   element:<Register></Register>
+},
+{
+  path:'dashboard',
+  element:<Dashbord></Dashbord>,
+  children:[{
+    path:'cart',
+    element:<Cart></Cart>
+  }]
 }
 ]);
 

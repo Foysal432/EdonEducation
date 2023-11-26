@@ -3,9 +3,11 @@ import Partner from "../../components/Partner/Partner";
 
 const Home = () => {
     return(
-        <div className="bg-red-400">
+        <div className="">
           <Banner></Banner>
-          <Partner></Partner>
+         <div className="mt-10">
+         <Partner></Partner>
+         </div>
         </div>
     )}
 export default Home;

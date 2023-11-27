@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 
 const Navbar = () => {
@@ -9,9 +9,9 @@ const Navbar = () => {
     .catch()
   }
     const navlink = <>
-    <li><a>Home</a></li>
+    <NavLink to={'/'}><li><a>Home</a></li></NavLink>
     <li><a>All Classes </a></li>
-    <li><a>Teach on</a></li>
+    <NavLink to={'teachon'} ><li><a>Teach on Edon </a></li></NavLink>
     </>
     return(
         <div>

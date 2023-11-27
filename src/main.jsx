@@ -13,14 +13,20 @@ import Provider from './Config/Provider';
 import { Toaster } from 'react-hot-toast';
 import Dashbord from './Layout/Dashbord';
 import Cart from './Pages/Dashboard/Cart/Cart';
+import TeachOn from './Pages/TeachOn/TeachOn';
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Main></Main>,
     children:[{
       path:'/',
       element:<Home></Home>
-    }],
+    },
+  {
+  path:'/teachon',
+  element:<TeachOn></TeachOn>
+  }
+  ],
     
   },
 {

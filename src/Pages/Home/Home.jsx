@@ -1,4 +1,5 @@
 import Banner from "../../components/Banner/Banner";
+import Footer from "../../components/Footer/Footer";
 import HappyStudent from "../../components/HappyStudent/HappyStudent";
 import Instructor from "../../components/Instructor/Instructor";
 import Partner from "../../components/Partner/Partner";
@@ -15,6 +16,9 @@ const Home = () => {
          </div>
          <div className="my-10">
             <HappyStudent></HappyStudent>
+         </div>
+         <div>
+            <Footer></Footer>
          </div>
         </div>
     )}

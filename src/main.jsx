@@ -13,7 +13,20 @@ import Provider from './Config/Provider';
 import { Toaster } from 'react-hot-toast';
 import Dashbord from './Layout/Dashbord';
 import Cart from './Pages/Dashboard/Cart/Cart';
-import TeachOn from './Pages/TeachOn/TeachOn';
+import TeachOnEdon from './Pages/TeachOnEdon/TeachOnEdon';
+import PrivateRoute from './Route/PrivateRoute';
+import AllUsers from './ElementofDashbord/AllUsers';
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
+import TeacherRequest from './Pages/Dashboard/Admin/TeacherRequest';
+import Profile from './Pages/Dashboard/Admin/Profile';
+import AllClasses from './Pages/Dashboard/Admin/Allclasses';
+import AddClass from './Pages/Dashboard/Teacher/AddClass';
+import MyClass from './Pages/Dashboard/Teacher/MyClass';
+import Enroll from './Pages/Dashboard/Student/Enroll';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -24,7 +37,7 @@ const router = createBrowserRouter([
     },
   {
   path:'/teachon',
-  element:<TeachOn></TeachOn>
+  element:<PrivateRoute><TeachOnEdon></TeachOnEdon></PrivateRoute>
   }
   ],
     
@@ -39,19 +52,52 @@ const router = createBrowserRouter([
 },
 {
   path:'dashboard',
-  element:<Dashbord></Dashbord>,
+  element:<PrivateRoute><Dashbord></Dashbord></PrivateRoute>,
+ 
   children:[{
-    path:'cart',
-    element:<Cart></Cart>
-  }]
+    // admin
+    path:'teacherrequest',
+    element:<TeacherRequest></TeacherRequest>
+  },
+  {
+path:'profile',
+element:<Profile></Profile>
+  },
+  {
+path:'allclasses',
+element:<AllClasses></AllClasses>
+  },
+
+  {
+    path:'users',
+    element:<AllUsers></AllUsers>,
+    // loader:()=>fetch('http://localhost:5000/users')
+  },
+  // teacher
+  {
+    path:'addclass',
+    element:<AddClass></AddClass>
+  },
+{
+  path:'myclass',
+  element:<MyClass></MyClass>
+},
+// student
+{
+  path:'enrollClass',
+  element:<Enroll></Enroll>
+}
+]
 }
 ]);
-
+const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <Provider>
+       <QueryClientProvider client={queryClient}>
+       <Provider>
   <RouterProvider router={router} />
   </Provider>
+    </QueryClientProvider>
   <Toaster></Toaster>
   </React.StrictMode>,
 )

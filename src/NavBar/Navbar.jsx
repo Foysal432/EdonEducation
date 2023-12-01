@@ -58,7 +58,7 @@ user ? <img className="w-1/2 mx-4 rounded-lg" src={user.photoURL} alt="" />:<img
       : <Link to={'/login'}><li><a>Log In</a></li></Link>
     }
   <li>
-  <Link to={'/dashboard/cart'}><button>Dashboard</button></Link>
+  <Link to={'/dashboard'}><button>Dashboard</button></Link>
   </li>
   
   </ul>

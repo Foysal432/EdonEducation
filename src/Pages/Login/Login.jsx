@@ -2,10 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { GrFormPreviousLink } from "react-icons/gr";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+
 const Login = () => {
     const navigate =useNavigate()
     const {login,Googlesingin} = useAuth()
-
+const axiosPublic =useAxiosPublic()
+    
 // use email and password
 const handlelogin =(e)=>{
     e.preventDefault()
@@ -15,6 +18,14 @@ const handlelogin =(e)=>{
      login(email,password)
      .then(result=>{
       console.log(result.user);
+      const userinfo ={
+        email:result.user?.email,
+        name: result.user?.displayName
+      }
+      axiosPublic.post('/users',userinfo)
+      .then(res =>{
+        console.log(res.data);
+      })
       toast.success('login success')
       navigate('/')
      })
@@ -30,6 +41,31 @@ const handlelogin =(e)=>{
     Googlesingin ()
     .then(result=>{
         console.log(result.user);
+        const userinfo ={
+            email:result.user?.email,
+            name: result.user?.displayName,
+            selectedRole:'student'
+          }
+        //   axiosPublic.post('/users',userinfo)
+        //   .then(res =>{
+        //     console.log(res.data);
+        //   })
+
+        fetch('http://localhost:5000/users',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(userinfo)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+           if (data.insertedId) {
+            toast.success('Success Your Submission')
+           }
+        })
+
         toast.success('Google login success')
         navigate('/')
     })

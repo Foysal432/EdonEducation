@@ -3,26 +3,48 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
+import { useState } from "react";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Register = () => {
+    const axioxPublic =useAxiosPublic()
+    const [selectedRole,setSelectedRole]=useState('')
     const {createUser} =useAuth()
-
+    const handlechange = event => {
+        setSelectedRole(event.target.value)
+      console.log( selectedRole);
+    }
     const handleRegister = async(e)=>{
         e.preventDefault()
         const email=e.target.email.value;
         const password=e.target.password.value;
         const name=e.target.name.value;
         const photo=e.target.photo.value;
-        console.log(email,password,name,photo);
+
+const userRole = {
+    email,
+    password,
+    name,
+    photo,
+    selectedRole
+}
+axioxPublic.post('/users',userRole)
+.then(res=>{
+ if (res.data.insertedId) {
+    console.log(res.data);
+ }
+})
+
+
+
+        console.log(email,password,name,photo,selectedRole);
         // create a new user
          createUser(email,password)
-
     // const toastid= toast.loading('Loading ...')
     .then(result=>{
         console.log(result.user)
         toast.success('register success')
-      // navigate('/login')
-      // update profile
+    
         //   update profile
         updateProfile(result.user,{
           displayName:name,
@@ -36,7 +58,6 @@ const Register = () => {
       .catch(error=>{
         toast.error(error.message)
         console.error(error)})
-
 
     }
 
@@ -75,6 +96,13 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="Your Password" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                            <select onChange={handlechange} className="select select-bordered w-full">
+             <option disabled selected>Who shot first?</option>
+          <option value='teacher'>Teacher</option>
+           <option value='student'>Student</option>
+            </select>
                             </div>
                             <div className="form-control">
                                 <label className="label">

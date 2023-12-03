@@ -55,6 +55,7 @@ const Dashbord = () => {
              </div>
              {/* dashboard content */}
              <div className="flex-1">
+               <h1 className="text-2xl font-bold text-center text-orange-500">Welcome Your Dashboard</h1>
                 <Outlet></Outlet>
              </div>
         </div>

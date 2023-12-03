@@ -59,7 +59,7 @@ localStorage.removeItem('access-token');
     return ()=>{
         return subscribe
     }
-},[])
+},[axiosPublic])
 
 const values ={
 createUser,

@@ -27,6 +27,8 @@ import AllClasses from './Pages/Dashboard/Admin/Allclasses';
 import AddClass from './Pages/Dashboard/Teacher/AddClass';
 import MyClass from './Pages/Dashboard/Teacher/MyClass';
 import Enroll from './Pages/Dashboard/Student/Enroll';
+import AllClass from './Pages/AllClass';
+import Update from './Pages/Dashboard/Teacher/Update';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -38,8 +40,13 @@ const router = createBrowserRouter([
   {
   path:'/teachon',
   element:<PrivateRoute><TeachOnEdon></TeachOnEdon></PrivateRoute>
-  }
-  ],
+  },
+  {
+    path:'/allclass',
+    element:<AllClass></AllClass>
+  },
+ 
+],
     
   },
 {
@@ -80,8 +87,9 @@ element:<AllClasses></AllClasses>
   },
 {
   path:'myclass',
-  element:<MyClass></MyClass>
+  element:<MyClass></MyClass>,
 },
+
 // student
 {
   path:'enrollClass',

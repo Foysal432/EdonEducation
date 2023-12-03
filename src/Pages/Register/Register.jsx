@@ -20,13 +20,14 @@ const Register = () => {
         const password=e.target.password.value;
         const name=e.target.name.value;
         const photo=e.target.photo.value;
+        const number=e.target.number.value;
 
 const userRole = {
     email,
-    password,
     name,
     photo,
-    selectedRole
+    selectedRole,
+    number
 }
 axioxPublic.post('/users',userRole)
 .then(res=>{
@@ -37,7 +38,7 @@ axioxPublic.post('/users',userRole)
 
 
 
-        console.log(email,password,name,photo,selectedRole);
+        console.log(email,password,name,photo,selectedRole,number);
         // create a new user
          createUser(email,password)
     // const toastid= toast.loading('Loading ...')
@@ -48,7 +49,8 @@ axioxPublic.post('/users',userRole)
         //   update profile
         updateProfile(result.user,{
           displayName:name,
-          photoURL:photo
+          photoURL:photo,
+          phoneNumber:number,
       })
       .then()
       .catch()
@@ -72,7 +74,7 @@ axioxPublic.post('/users',userRole)
                 </div>
             </Link>
         </div>
-        {/* login */}
+        {/* register */}
         <div>
             <div className=" w-4/5 mx-auto">
                 <div className="">
@@ -98,11 +100,17 @@ axioxPublic.post('/users',userRole)
                                 <input type="password" name="password" placeholder="Your Password" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Phone</span>
+                                </label>
+                                <input type="text" name="number" placeholder="Your Phone Number" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
                             <select onChange={handlechange} className="select select-bordered w-full">
-             <option disabled selected>Who shot first?</option>
-          <option value='teacher'>Teacher</option>
-           <option value='student'>Student</option>
-            </select>
+                      <option disabled selected>What Your Role</option>
+                      <option value='teacher'>Teacher</option>
+                        <option value='student'>Student</option>
+                    </select>
                             </div>
                             <div className="form-control">
                                 <label className="label">

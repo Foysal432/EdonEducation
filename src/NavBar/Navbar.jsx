@@ -10,8 +10,8 @@ const Navbar = () => {
   }
     const navlink = <>
     <NavLink to={'/'}><li><a>Home</a></li></NavLink>
-    <li><a>All Classes </a></li>
-    <NavLink to={'teachon'} ><li><a>Teach on Edon </a></li></NavLink>
+    <NavLink to={'/allclass'}><li><a>All Classes </a></li></NavLink>
+    <NavLink to={'/teachon'} ><li><a>Teach on Edon </a></li></NavLink>
     </>
     return(
         <div>
@@ -43,7 +43,7 @@ const Navbar = () => {
   <div className="avatar">
   <div className="w-10 rounded-full">
   {
-user ? <img className="w-1/2 mx-4 rounded-lg" src={user.photoURL} alt="" />:<img className="w-1/3" src="https://i.ibb.co/d0zDYB5/images.png" alt="" /> 
+user ? <img className="w-1/2 mx-4 rounded-lg" src={user?.photoURL} alt="" />:<img className="w-1/3" src="https://i.ibb.co/d0zDYB5/images.png" alt="" /> 
 }
   </div>
 </div>

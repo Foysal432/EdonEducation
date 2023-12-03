@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { reload } from "firebase/auth";
 const AllUsers = () => {
 // const data=useLoaderData()
 // const _id = data[1]._id
@@ -24,13 +25,14 @@ console.log(users);
 const handlemakeAdmin = user =>{
 axiosPublic.patch(`/users/admin/${user._id}`)
 .then(res =>{
+  reload()
   console.log(res.data);
   if (res.data.modifiedCount > 0) {
     
     Swal.fire({
       position: "top-end",
       icon: "success",
-      title: "Your work has been saved",
+      title: "admin added successful",
       showConfirmButton: false,
       timer: 1500
     });

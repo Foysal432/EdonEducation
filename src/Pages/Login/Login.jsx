@@ -51,7 +51,7 @@ const handlelogin =(e)=>{
         //     console.log(res.data);
         //   })
 
-        fetch('http://localhost:5000/users',{
+        fetch('https://assingment-12-server-gamma.vercel.app/users',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

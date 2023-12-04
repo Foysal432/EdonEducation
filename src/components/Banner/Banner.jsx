@@ -9,7 +9,7 @@ const Banner = () => {
                   <button className="btn  mx-5 my-4 bg-green-400 ">Find Courses</button>
                 </div>
                 <div className="w-1/2">
-                 <img className="lg:w-3/4" src="https://i.ibb.co/fxCbJfq/banner-img-2-A-12.png" alt="" />
+                 <img className="lg:w-3/4" src="https://i.ibb.co/wCVSK2k/banner-img-2-A-12.png" alt="" />
                 </div>
             </div>
         </div>

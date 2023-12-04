@@ -18,7 +18,7 @@ const Dashbord = () => {
     return(
         <div className="flex">
             {/* dashboard side bar */}
-             <div className="w-60 h-screen bg-orange-400">
+             <div className="w-60 h-screen bg-green-500">
           <ul className="menu p-4">
    {
     Role === 'admin'?

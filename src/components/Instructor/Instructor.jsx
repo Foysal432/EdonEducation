@@ -34,28 +34,28 @@ const Instructor = () => {
       >
         <SwiperSlide>
        <div className=''>
-  <img className='w-4/5' src="https://i.ibb.co/ChjktXC/instructors-1.jpg" alt="" />
+  <img className='w-4/5' src="https://i.ibb.co/L9jRYHK/instructors-1.jpg" alt="" />
    <h1 className='text-green-400'>Lance Atman</h1>
   <p>Full Stack Developer</p>
        </div>
         </SwiperSlide>
         <SwiperSlide>
         <div className=''>
-  <img className='w-4/5' src="https://i.ibb.co/R3Sm7dD/instructors-2.jpg" alt="" />
+  <img className='w-4/5' src="https://i.ibb.co/RSYvt5z/instructors-2.jpg" alt="" />
    <h1 className='text-green-400'>Sally Welch</h1>
   <p>Digital Marketer</p>
        </div>
         </SwiperSlide>
         <SwiperSlide>
         <div className=''>
-  <img className='w-4/5' src="https://i.ibb.co/GMwVvzh/instructors-3.jpg" alt="" />
+  <img className='w-4/5' src="https://i.ibb.co/Qf7sFnQ/instructors-3.jpg" alt="" />
    <h1 className='text-green-400'>Jessese Jeslin</h1>
   <p>App Developer</p>
        </div>
         </SwiperSlide>
         <SwiperSlide>
         <div className=''>
-  <img className='w-4/5' src="https://i.ibb.co/0hp3sWk/instructors-4.jpg" alt="" />
+  <img className='w-4/5' src="https://i.ibb.co/SBZGqQj/instructors-4.jpg" alt="" />
    <h1 className='text-green-400'>Willie Mcdonange</h1>
   <p>Graphic Desinger</p>
        </div>

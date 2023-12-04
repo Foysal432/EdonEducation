@@ -28,38 +28,38 @@ const Partner = () => {
       >
         <SwiperSlide>
         <div>
-        <img src="https://i.ibb.co/2ZbjxTK/partner-1.png" alt="" />
+        <img src="https://i.ibb.co/tMCFjJD/partner-1.png" alt="" />
         <p className='text-xl font-bold hidden md:block'>It Company Has Been Working with Us For 2 Years</p>
         </div>
         </SwiperSlide>
         <SwiperSlide>
         <div>
-        <img src="https://i.ibb.co/gTBNWnc/partner-2.png" alt="" />
+        <img src="https://i.ibb.co/z5S5bvK/partner-2.png" alt="" />
         <p className='text-xl font-bold hidden md:block'>It Company Has Been Working with Us For 4 Years</p>
         </div>
 
         </SwiperSlide>
         <SwiperSlide>
         <div>
-        <img src="https://i.ibb.co/KLVKVyL/partner-3-1.png" alt="" />
+        <img src="https://i.ibb.co/71JLhzn/partner-3-1.png" alt="" />
         <p className='text-xl font-bold hidden md:block'>It Company Has Been Working with Us For 5 Years</p>
         </div>
         </SwiperSlide>
         <SwiperSlide>
         <div>
-        <img src="https://i.ibb.co/VwgXYtb/partner-4-1.png" alt="" />
+        <img src="https://i.ibb.co/rx0TjnH/partner-4-1.png" alt="" />
         <p> <p className='text-xl font-bold hidden md:block'>It Company Has Been Working with Us For 3 Years</p></p>
         </div>
         </SwiperSlide>
         <SwiperSlide>
          <div>
-         <img src="https://i.ibb.co/ScJ59Jw/partner-5.png" alt="" />
+         <img src="https://i.ibb.co/xqzyYpF/partner-5.png" alt="" />
          <p className='text-xl font-bold hidden md:block'>It Company Has Been Working with Us For 6 Years</p>
          </div>
         </SwiperSlide>
         <SwiperSlide>
         <div>
-        <img src="https://i.ibb.co/BCntKHP/partner-6.png" alt="" />
+        <img src="https://i.ibb.co/DMdXcnx/partner-6.png" alt="" />
         <p className='text-xl font-bold hidden md:block'>It Company Has Been Working with Us For 5 Month</p>
         </div>
         </SwiperSlide>

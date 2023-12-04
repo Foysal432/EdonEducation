@@ -13,7 +13,7 @@ const TeachOnEdon = () => {
       title:data.title
     }
     // send data to the server
-    fetch('http://localhost:5000/trequest', {
+    fetch('https://assingment-12-server-gamma.vercel.app/trequest', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

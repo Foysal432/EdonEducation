@@ -28,7 +28,7 @@ const Navbar = () => {
       </ul>
     </div>
     <div>
-    <img src="https://i.ibb.co/30FmBJV/logoA122.png" alt="" />
+    <img src="https://i.ibb.co/bB4K96q/logoA122.png" alt="" />
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -43,7 +43,7 @@ const Navbar = () => {
   <div className="avatar">
   <div className="w-10 rounded-full">
   {
-user ? <img className="w-1/2 mx-4 rounded-lg" src={user?.photoURL} alt="" />:<img className="w-1/3" src="https://i.ibb.co/d0zDYB5/images.png" alt="" /> 
+user ? <img className="w-1/2 mx-4 rounded-lg" src={user?.photoURL} alt="" />:<img className="w-1/3" src="https://i.ibb.co/YQ8Myww/770117-people-512x512.png" alt="" /> 
 }
   </div>
 </div>

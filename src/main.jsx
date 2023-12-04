@@ -29,9 +29,12 @@ import MyClass from './Pages/Dashboard/Teacher/MyClass';
 import Enroll from './Pages/Dashboard/Student/Enroll';
 import AllClass from './Pages/AllClass';
 import Update from './Pages/Dashboard/Teacher/Update';
+import Details from './Pages/Dashboard/Teacher/Details';
+import Error from './Error';
 const router = createBrowserRouter([
   {
     path: '/',
+    errorElement:<Error></Error>,
     element: <Main></Main>,
     children:[{
       path:'/',
@@ -89,7 +92,16 @@ element:<AllClasses></AllClasses>
   path:'myclass',
   element:<MyClass></MyClass>,
 },
-
+{
+path:'myclass/details',
+element:<Details></Details>,
+loader:({params})=>fetch(`https://assingment-12-server-gamma.vercel.app/addedclass/${params.id}`)
+},
+{
+  path:'myclass/update/:id',
+  element:<Update></Update>,
+  loader:({params})=>fetch(`https://assingment-12-server-gamma.vercel.app/addedclass/update/${params.id}`)
+},
 // student
 {
   path:'enrollClass',

@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import HappyStudent from "../../components/HappyStudent/HappyStudent";
 import Instructor from "../../components/Instructor/Instructor";
 import Partner from "../../components/Partner/Partner";
+import Populerclass from "../../components/Populer/Populerclass";
 
 const Home = () => {
     return(
@@ -10,6 +11,9 @@ const Home = () => {
           <Banner></Banner>
          <div className="mt-10">
          <Partner></Partner>
+         </div>
+         <div>
+            <Populerclass></Populerclass>
          </div>
          <div className=" my-16">
             <Instructor></Instructor>

@@ -7,4 +7,7 @@
 - In Home Page I use A Banner section, And Our Teacher indroduce, And Our Student Says, And I also Use All Class Section, About us, At Last i use A WonderFull Footer And i Also Use Crusol Maximum Section
 - And I Also Use A Login In Mathood Without Login anyuser can't enter in dashboard
 - I Make 3 Type of Dashbord is that Teacher Dashboard, Student Dashboard, Admin Dashboard
-- in Admin Dashboard a admin make a student in a teacher    
+- in Admin Dashboard an admin make a student in a teacher,
+- then The teacher Access Teacher Dasboard Then He Use All The Fuction of Teacher Dashboard
+- A Student Access He/She her dasboard Then he access All Her Dashboard Fuction
+- All This Are Private Route Soo Without Login or register Anyone cannot Access Any Dashboard    
